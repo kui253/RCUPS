@@ -1,6 +1,6 @@
 *.log
-src/logs/
-src/.vscode/
-src/model/__pycache__/
-src/utils/__pycache__/
-src/_transformers/__pycache__/
+src2/logs/
+src2/.vscode/
+src2/model/__pycache__/
+src2/utils/__pycache__/
+src2/_transformers/__pycache__/
