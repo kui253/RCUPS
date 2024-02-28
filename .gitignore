@@ -1,0 +1,6 @@
+*.log
+src/logs/
+src/.vscode/
+src/model/__pycache__/
+src/utils/__pycache__/
+src/_transformers/__pycache__/
