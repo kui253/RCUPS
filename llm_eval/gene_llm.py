@@ -60,7 +60,7 @@ def eval_all(all_result, datas):
 
 
 # "http://127.0.0.1:10003/qa_generate"
-out_dir, url, mode = sys.argv[1], sys.argv[2], sys.argv[3]
+out_dir, url = sys.argv[1], sys.argv[2]
 
 json_dir = "final_test.json"
 SUMM_TASK = "Your Job is to summarize the given dialogue."
