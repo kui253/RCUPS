@@ -97,4 +97,4 @@ we use the [bertsum](https://github.com/nlpyang/BertSum) for utterances extracti
    python comment_llm.py out_file_name.json, api_url, target_file.json summ
    ```
 
-some code we used are borrow from [SDDS]((https://github.com/Hannibal046/SDDS))
+some code we used are borrow from [SDDS](https://github.com/Hannibal046/SDDS)
