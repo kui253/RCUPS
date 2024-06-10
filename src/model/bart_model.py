@@ -1155,7 +1155,7 @@ class DualAttenEncoder(BartEncoder):
             torch.nn.Tanh(),
             torch.nn.Linear(config.d_model, config.d_model * 2 * config.decoder_layers),
         )
-        
+
         self.n_slots = config.n_slots
         self.d_head = config.d_model // config.decoder_attention_heads
         self.n_head = config.decoder_attention_heads
@@ -1497,21 +1497,7 @@ class BaseBart(BartPretrainedModel):
         super().__init__(config)
         padding_idx, vocab_size = config.pad_token_id, config.vocab_size
         self.shared = nn.Embedding(vocab_size, config.d_model, padding_idx)
-        self.slot_embed = nn.Parameter(torch.Tensor(config.n_slots, config.d_model))
-        nn.init.normal_(self.slot_embed, mean=0.0, std=config.d_model**-0.5)
-        self.context_attention = BartAttention(
-            config.d_model,
-            1,  # or config.encoder_attention_heads,
-            dropout=config.attention_dropout,
-        )
 
-        self.prefix_proj = torch.nn.Sequential(
-            torch.nn.Linear(config.d_model, config.d_model),
-            torch.nn.Tanh(),
-            torch.nn.Linear(config.d_model, config.d_model * 2 * config.decoder_layers),
-        )
-
-        self.n_slots = config.n_slots
         self.d_head = config.d_model // config.decoder_attention_heads
         self.n_head = config.decoder_attention_heads
         self.decoder_layer_nums = config.decoder_layers
