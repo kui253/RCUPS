@@ -8,7 +8,7 @@ In dialogue summarization, traditional approaches often concatenate utterances i
 
 ## Setup
 
-**file structure**
+**File Structure**
 
 ```
 ├── README.md
@@ -52,7 +52,7 @@ In dialogue summarization, traditional approaches often concatenate utterances i
         └── model_util.py
 ```
 
-our env details are show in [env_config](./readme_resources/env.yaml)
+Our env details are show in [env_config](./readme_resources/env.yaml)
 
 ```python
 ## firstly install torch corresponding to the CUDA
@@ -63,23 +63,23 @@ pip install transformers==4.8.2 \
 
 ## Data
 
-all the data are open source.
+All the data are open source.
 
 |                |                            SAMsum                            |                        Dialogsum                        |                        TODsum                         |
 | :------------: | :----------------------------------------------------------: | :-----------------------------------------------------: | :---------------------------------------------------: |
 |    raw data    | [Samsung/samsum · Datasets at Hugging Face](https://huggingface.co/datasets/Samsung/samsum) | [cylnlp/dialogsum](https://github.com/cylnlp/DialogSum) | [pris-nlp/TODSum](https://github.com/pris-nlp/TODSum) |
 | processed data |                 [data/SAMsum](./data/samsum)                 |           [data/Dialogsum](./data/dialogsum)            |             [data/TODsum](./data/TODsum)              |
 
-we use the [bertsum](https://github.com/nlpyang/BertSum) for utterances extraction.
+We use the [bertsum](https://github.com/nlpyang/BertSum) for utterances extraction.
 
 ## Fine tuning
 
-1. change the pretrain model ckpt path in [src/config/RCUPSconfig.json](./src/config/RCUPSconfig.json)
-2. use the shell script [run.sh](./src/run.sh)
+1. Change the pretrain model ckpt path in [src/config/RCUPSconfig.json](./src/config/RCUPSconfig.json)
+2. Use the shell script [run.sh](./src/run.sh)
 
 ## LLM evaluation
 
-1. LLM generation script: [llm_eval/gene_llm.py](./llm_eval/gene_llm.py), this script only accept json file
+1. LLM generation script: [llm_eval/gene_llm.py](./llm_eval/gene_llm.py). This script only accepts JSON files.
 
    ```bash
    # json file with examples in a format : {"idxn": text} (n is the order of the sample)
@@ -97,4 +97,4 @@ we use the [bertsum](https://github.com/nlpyang/BertSum) for utterances extracti
    python comment_llm.py out_file_name.json, api_url, target_file.json summ
    ```
 
-some code we used are borrow from [SDDS](https://github.com/Hannibal046/SDDS)
+Some of the code we used is borrowed from [SDDS](https://github.com/Hannibal046/SDDS)
